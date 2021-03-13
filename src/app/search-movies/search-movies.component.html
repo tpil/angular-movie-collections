@@ -1,15 +1,22 @@
 <div class="">              
-    <form>
+    <form (ngSubmit)="fetchMovies()">
         <div class="searchInput">
             <i class="search-icon fas fa-search "></i> 
-            <input 
-                    type="search" 
-                    placeholder="Search" 
-                    aria-label="Search"
-                    placeholder='search movies'
-                   
-                    >
+            <input [(ngModel)]="name"  type="search"   placeholder='search movies' [ngModelOptions]="{standalone: true}"/>
+            
                     
         </div>
-    </form>      
+    </form>  
+
+   
+    <p>The movie Term is: {{name}}</p>    
+    
+
+        <ul *ngIf="movies">
+        <li *ngFor="let movie of movies">
+            <p class="name"></p>
+            <p class="country"></p>
+            <a class="site" href="#">site</a>
+        </li>
+        </ul>
 </div>
