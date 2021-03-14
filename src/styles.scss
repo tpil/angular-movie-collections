@@ -1,11 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
-@import url('https://fonts.googleapis.com/css?family=Nunito:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cabin&display=swap');
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
 
 $primary: rgb(17, 16, 19);
 
 body {
     margin: 0;
-    font-family: 'Nunito', 'sans-serif';
+    font-family: 'Cabin', sans-serif;
     font-size: 18px;
 }
 
@@ -21,6 +23,10 @@ header {
     a {
         color: white;
         text-decoration: none;
+        &:hover{
+            color: white;
+            text-decoration: none;
+        }
     }
     a.logo {
         font-weight: bold;
@@ -33,11 +39,13 @@ header {
             list-style-type: none;
             margin: 0;
             display: flex;
-           
+          
             li a {
                 padding: 1em;
-
+              
                 &:hover {
+                    text-decoration: none;
+                    color: white;
                     background:rgba($color: #285dac, $alpha: 1.0);
                 }
             }
@@ -48,3 +56,4 @@ header {
 h1 {
     margin-top: 2em;
 }
+

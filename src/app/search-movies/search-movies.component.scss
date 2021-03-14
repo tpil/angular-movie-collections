@@ -1,4 +1,7 @@
-
+.movie-container{
+    max-width:90%;
+    margin: auto;
+}
   
 .searchInput{
     
@@ -27,7 +30,7 @@
        position: relative;
        padding:0 .5em;
        top: 4px;
-        line-height: 49px;
+        line-height: 50px;
         height: 50px;
         border-radius: 10px 0 0 10px;
         background-color: #1b1c1d;

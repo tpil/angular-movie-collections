@@ -1,12 +1,14 @@
-<div class="container">              
+<div class="movie-container">              
     <form (ngSubmit)="getMovies()">
-        <div class="searchInput">
+        <div class="searchInput ">
             <i class="search-icon fas fa-search "></i> 
-            <input [(ngModel)]="term"  type="search"   placeholder='search movies' [ngModelOptions]="{standalone: true}"/>
+            <input name="titlesearch" [(ngModel)]="term"  required minlength="3" pattern="[A-Za-z]" #titlesearch="ngModel" type="search"   placeholder='search movies' [ngModelOptions]="{standalone: true}"/>
             
                     
         </div>
     </form>  
+
+
     <div class="tooltip">Hover over me
         <span class="tooltiptext">Tooltip text</span>
       </div>
@@ -15,11 +17,13 @@
         <ul *ngIf="movies">
            
             <li class="card" *ngFor="let movie of movies">
-                <img class="poster" src="{{'https://www.themoviedb.org/t/p/w500'+movie.poster_path+''}} "/>
+                <img *ngIf="movie.poster_path" class="poster" src="{{'https://www.themoviedb.org/t/p/w500'+movie.poster_path+''}} "/>
                 <h4>{{movie.title}}</h4>
                <p><span class="rating"><b>Rating:</b> {{movie.vote_average}}</span></p>
-                <br>
+               
             </li>
         
         </ul>
+
+        <app-pagination [pages]="total_pages" (newItemEvent)="onPageChange($event)"></app-pagination>
 </div>
