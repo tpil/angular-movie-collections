@@ -1,22 +1,25 @@
-<div class="">              
-    <form (ngSubmit)="fetchMovies()">
+<div class="container">              
+    <form (ngSubmit)="getMovies()">
         <div class="searchInput">
             <i class="search-icon fas fa-search "></i> 
-            <input [(ngModel)]="name"  type="search"   placeholder='search movies' [ngModelOptions]="{standalone: true}"/>
+            <input [(ngModel)]="term"  type="search"   placeholder='search movies' [ngModelOptions]="{standalone: true}"/>
             
                     
         </div>
     </form>  
-
-   
-    <p>The movie Term is: {{name}}</p>    
+    <div class="tooltip">Hover over me
+        <span class="tooltiptext">Tooltip text</span>
+      </div>
+      
     
-
         <ul *ngIf="movies">
-        <li *ngFor="let movie of movies">
-            <p class="name"></p>
-            <p class="country"></p>
-            <a class="site" href="#">site</a>
-        </li>
+           
+            <li class="card" *ngFor="let movie of movies">
+                <img class="poster" src="{{'https://www.themoviedb.org/t/p/w500'+movie.poster_path+''}} "/>
+                <h4>{{movie.title}}</h4>
+               <p><span class="rating"><b>Rating:</b> {{movie.vote_average}}</span></p>
+                <br>
+            </li>
+        
         </ul>
 </div>
