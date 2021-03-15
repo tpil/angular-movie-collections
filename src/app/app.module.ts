@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { DetailsComponent } from './details/details.component';
 import { CollectionsComponent } from './collections/collections.component';
 import { SearchMoviesComponent } from './search-movies/search-movies.component';
 import {FormsModule} from '@angular/forms';
@@ -14,7 +13,6 @@ import { PaginationComponent } from './pagination/pagination.component';
 @NgModule({
   declarations: [
     AppComponent,
-    DetailsComponent,
     CollectionsComponent,
     SearchMoviesComponent,
     PaginationComponent
